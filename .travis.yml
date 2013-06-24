@@ -8,4 +8,6 @@ before_script:
   - git submodule update
   - cd tests
   
-script: phpunit --colors --bootstrap bootstrap.php unit
+script: 
+  - phpunit unit
+  - php coverage-checker.php clover.xml 80
