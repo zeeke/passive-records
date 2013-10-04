@@ -10,7 +10,7 @@ before_script:
   - cd tests
 
 script:
-  - phpunit --coverage-clover clover.xml
+  - phpunit --coverage-clover clover.xml unit
 
 after_script:
   - cd ..
