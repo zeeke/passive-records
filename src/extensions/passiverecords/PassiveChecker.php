@@ -23,6 +23,7 @@ class PassiveChecker
             'AND' => 'checkLogic',
             'OR' => 'checkLogic',
             'NOT' => 'checkNot',
+            '!' => 'checkNot',
             'IN' => 'checkIn',
             '=' => 'checkCompare',
             '!=' => 'checkCompare',
@@ -50,11 +51,10 @@ class PassiveChecker
     public function checkHashCondition ($row, $condition)
     {
         $columns = $this->schema->columns;
-        foreach ($condition as $key => $value)
-        {
+        foreach ($condition as $key => $value) {
             $columnIndex = array_search($key, $columns);
             if ($columnIndex === false) {
-                throw new PassiveQueryException('Bad column: '.print_r($key, true));
+                throw new PassiveQueryException("Bad column: $key");
             }
             if ($row[$columnIndex] != $value) {
                 return false;
@@ -69,10 +69,11 @@ class PassiveChecker
         $parts = array();
         
         foreach ($operands as $operand) {
-            if (!is_array($operand)) {
-                throw new PassiveQueryException('Logic operands must be array conditions: '.print_r($operand, true));
+            if (is_array($operand)) {
+                $parts[] = $this->checkRow($row, $operand);
+            } else {
+                $parts[] = $operand == true;
             }
-            $parts[] = $this->checkRow($row, $operand);    
         }
         
         if ($operator == 'AND') {
@@ -104,7 +105,10 @@ class PassiveChecker
         if (count($operands) > 1) {
             throw new PassiveQueryException('NOT operator accepts only one operand: '.print_r($operands, true));
         }
-        return !$this->checkRow($row, $operands);
+        if (is_array($operands[0])) {
+            return !$this->checkRow($row, $operands);
+        }
+        return $operands[0] == false;
     }
     
     public function checkIn ($row, $operator, $operands)
