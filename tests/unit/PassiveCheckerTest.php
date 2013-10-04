@@ -1,6 +1,10 @@
 <?php
 
-class PassiveCheckerTest extends CTestCase
+use extensions\passiverecords\PassiveSchema;
+use extensions\passiverecords\PassiveChecker;
+use extensions\passiverecords\PassiveQueryException;
+
+class PassiveCheckerTest extends yii\test\TestCase
 {
     public function testCompare ()
     {

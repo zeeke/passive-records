@@ -2,12 +2,17 @@ language: php
 
 php:
   - 5.3
-  
+  - 5.4
+
 before_script:
-  - git submodule init
-  - git submodule update
+  - composer self-update && composer --version
+  - composer require --prefer-source satooshi/php-coveralls 0.6.*
   - cd tests
-  
-script: 
-  - phpunit unit
-  - php coverage-checker.php clover.xml 80
+
+script:
+  - phpunit --coverage-clover clover.xml
+
+after_script:
+  - cd ..
+  - php vendor/bin/coveralls
+

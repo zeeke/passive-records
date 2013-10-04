@@ -1,6 +1,8 @@
 <?php
 
-class PassiveRecordTest extends CTestCase
+use extensions\passiverecords\PassiveRecord;
+
+class PassiveRecordTest extends yii\test\TestCase
 {
     public function testFindAllByHash ()
     {
@@ -52,3 +54,9 @@ class Model1 extends PassiveRecord
         );
     }
 }
+
+class InvalidConfigModel extends PassiveRecord
+{
+	
+}
+
