@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1380909618">
-  <project timestamp="1380909618">
+<coverage generated="1380911804">
+  <project timestamp="1380911804">
     <package name="extensions\passiverecords">
       <file name="/home/zeeke/Dropbox/work/ekili/rep/passive-records/src/extensions/passiverecords/PassiveChecker.php">
         <class name="PassiveChecker" namespace="extensions\passiverecords">
@@ -563,40 +563,6 @@
         <metrics loc="53" ncloc="30" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="14" coveredelements="0"/>
       </file>
     </package>
-    <file name="/home/zeeke/netbeans-7.3.1/php/phpunit/NetBeansSuite.php">
-      <class name="NetBeansSuite" namespace="global" fullPackage="NetBeans" package="NetBeans">
-        <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="0" elements="28" coveredelements="0"/>
-      </class>
-      <line num="82" type="method" name="suite" crap="6" count="0"/>
-      <line num="83" type="stmt" count="0"/>
-      <line num="84" type="stmt" count="0"/>
-      <line num="85" type="stmt" count="0"/>
-      <line num="86" type="stmt" count="0"/>
-      <line num="87" type="stmt" count="0"/>
-      <line num="100" type="method" name="toRun" crap="56" count="0"/>
-      <line num="101" type="stmt" count="0"/>
-      <line num="102" type="stmt" count="0"/>
-      <line num="103" type="stmt" count="0"/>
-      <line num="104" type="stmt" count="0"/>
-      <line num="105" type="stmt" count="0"/>
-      <line num="106" type="stmt" count="0"/>
-      <line num="108" type="stmt" count="0"/>
-      <line num="109" type="stmt" count="0"/>
-      <line num="110" type="stmt" count="0"/>
-      <line num="112" type="stmt" count="0"/>
-      <line num="113" type="stmt" count="0"/>
-      <line num="114" type="stmt" count="0"/>
-      <line num="115" type="stmt" count="0"/>
-      <line num="117" type="stmt" count="0"/>
-      <line num="134" type="method" name="rglob" crap="20" count="0"/>
-      <line num="135" type="stmt" count="0"/>
-      <line num="136" type="stmt" count="0"/>
-      <line num="137" type="stmt" count="0"/>
-      <line num="138" type="stmt" count="0"/>
-      <line num="139" type="stmt" count="0"/>
-      <line num="140" type="stmt" count="0"/>
-      <metrics loc="144" ncloc="45" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="0" elements="28" coveredelements="0"/>
-    </file>
-    <metrics files="11" loc="1465" ncloc="897" classes="10" methods="62" coveredmethods="12" conditionals="0" coveredconditionals="0" statements="455" coveredstatements="147" elements="517" coveredelements="159"/>
+    <metrics files="10" loc="1321" ncloc="852" classes="9" methods="59" coveredmethods="12" conditionals="0" coveredconditionals="0" statements="430" coveredstatements="147" elements="489" coveredelements="159"/>
   </project>
 </coverage>
