@@ -1,16 +1,16 @@
 <?php
 
-use extensions\passiverecords\PassiveRecord;
+use laborra\passiverecords\PassiveRecord;
 
 class PassiveRecordTest extends yii\test\TestCase
 {
     public function testFindAllByHash ()
     {
-        $models = Model1::findAll(array('attr1' => 'x'));
+        $models = Model::findAll(array('attr1' => 'x'));
 
         $this->assertTrue(count($models) === 2);
-        $this->assertTrue($models[0] instanceof Model1);
-        $this->assertTrue($models[1] instanceof Model1);
+        $this->assertTrue($models[0] instanceof Model);
+        $this->assertTrue($models[1] instanceof Model);
 
         $this->assertEquals(1, $models[0]->id);
         $this->assertEquals(2, $models[1]->id);
@@ -18,18 +18,18 @@ class PassiveRecordTest extends yii\test\TestCase
 
     public function testFindByHash ()
     {
-        $model = Model1::find(array('attr1' => 'y'));
+        $model = Model::find(array('attr1' => 'y'));
 
-        $this->assertTrue($model instanceof Model1);
+        $this->assertTrue($model instanceof Model);
         $this->assertEquals(3, $model->id);
         $this->assertEquals(10, $model->attr3);
     }
 
     public function testFindById ()
     {
-        $model = Model1::find(3);
+        $model = Model::find(3);
 
-        $this->assertTrue($model instanceof Model1);
+        $this->assertTrue($model instanceof Model);
         $this->assertEquals(3, $model->id);
         $this->assertEquals(10, $model->attr3);
     }
@@ -42,7 +42,16 @@ class PassiveRecordTest extends yii\test\TestCase
 
     public function testStringOrderBy ()
     {
-        $data = Model::find()->orderBy('attr2')->one();
+        $data = Model::find()->orderBy('attr2 asc')->one();
+        $this->assertEquals(4, $data->id);
+    }
+
+    public function testMultipleOrder ()
+    {
+        $data = Model::find()
+            ->orderBy('attr3 asc')
+            ->orderBy('attr1 desc')
+            ->one();
         $this->assertEquals(3, $data->id);
     }
 
@@ -56,7 +65,7 @@ class PassiveRecordTest extends yii\test\TestCase
     }
 }
 
-class Model1 extends PassiveRecord
+class Model extends PassiveRecord
 {
     public $id;
     public $attr1;

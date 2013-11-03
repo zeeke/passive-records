@@ -1,28 +1,28 @@
 <?php
 
-use extensions\passiverecords\PassiveRecord;
+use laborra\passiverecords\PassiveRecord;
 
 class SampleAccessTest extends yii\test\TestCase
 {
     public function testBasic ()
     {
         $this->assertEquals(1,
-            count(Role::find('ANONYMOUS')->getAllAllowedFunctionality()));
+            count(Role::find('ANONYMOUS')->getAllAllowedFunctionalities()));
         $this->assertEquals(2,
-            count(Role::find('USER')->getAllAllowedFunctionality()));
+            count(Role::find('USER')->getAllAllowedFunctionalities()));
         $this->assertEquals(3,
-            count(Role::find('MODERATOR')->getAllAllowedFunctionality()));
+            count(Role::find('MODERATOR')->getAllAllowedFunctionalities()));
         $this->assertEquals(4,
-            count(Role::find('ADMIN')->getAllAllowedFunctionality()));
+            count(Role::find('ADMIN')->getAllAllowedFunctionalities()));
     }
 }
 
 class Role extends PassiveRecord
 {
-    public static function getSchema ()
+    public static function getSchemaDef ()
     {
         return array(
-            'id' => array('PK'),
+            'id',
             'label',
         );
     }
@@ -45,10 +45,11 @@ class Role extends PassiveRecord
 
     public function getAllAllowedFunctionalities ()
     {
-        $roleFunctionalities = $this->allowedFunctionality->all();
+        $roleFunctionalities = RoleFunctionality::findAll(array('role_id' => $this->id));
+        
         $ret = array();
         foreach ($roleFunctionalities as $roleFunctionality) {
-            $ret[] = Functionality::find($roleFunctionality->Functionality_id);
+            $ret[] = Functionality::find($roleFunctionality->functionality_id);
         }
 
         return $ret;
@@ -57,10 +58,10 @@ class Role extends PassiveRecord
 
 class Functionality extends PassiveRecord
 {
-    public static function getSchema ()
+    public static function getSchemaDef ()
     {
         return array(
-            'id' => array('PK'),
+            'id',
             'label',
         );
     }
@@ -78,11 +79,11 @@ class Functionality extends PassiveRecord
 
 class RoleFunctionality extends PassiveRecord
 {
-    public static function getSchema ()
+    public static function getSchemaDef ()
     {
         return array(
             'role_id',
-            'Functionality_id',
+            'functionality_id',
         );
     }
 

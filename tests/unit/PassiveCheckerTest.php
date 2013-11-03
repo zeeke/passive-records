@@ -1,8 +1,8 @@
 <?php
 
-use extensions\passiverecords\PassiveSchema;
-use extensions\passiverecords\PassiveChecker;
-use extensions\passiverecords\PassiveQueryException;
+use laborra\passiverecords\PassiveSchema;
+use laborra\passiverecords\PassiveChecker;
+use laborra\passiverecords\PassiveQueryException;
 
 class PassiveCheckerTest extends yii\test\TestCase
 {

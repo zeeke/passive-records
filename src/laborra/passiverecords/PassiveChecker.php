@@ -1,6 +1,6 @@
 <?php
 
-namespace extensions\passiverecords;
+namespace laborra\passiverecords;
 
 class PassiveChecker
 {
@@ -175,4 +175,3 @@ class PassiveChecker
         throw new PassiveQueryException('Invalid compare operator: '.print_r($operator, true));
     }
 }
-

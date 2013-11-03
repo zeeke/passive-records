@@ -130,7 +130,9 @@ class Role extends PassiveRecord
     
     public static function getData ()
     {
-        return array();
+        return array(
+            array('ADMIN', 'Administrator'),
+        );
     }
 }
 
@@ -168,6 +170,7 @@ class RoleFunctionality extends PassiveRecord
 
 ## Documentation
 
+### Declaring passive record classes
 
-In order to use passive record concept you have 
+
 
