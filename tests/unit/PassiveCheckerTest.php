@@ -4,7 +4,7 @@ use laborra\passiverecords\PassiveSchema;
 use laborra\passiverecords\PassiveChecker;
 use laborra\passiverecords\PassiveQueryException;
 
-class PassiveCheckerTest extends yii\test\TestCase
+class PassiveCheckerTest extends PHPUnit_Framework_TestCase
 {
     private $ROW = array(1,4,4);
     

@@ -2,7 +2,7 @@
 
 use laborra\passiverecords\PassiveRecord;
 
-class SampleAccessTest extends yii\test\TestCase
+class SampleAccessTest extends PHPUnit_Framework_TestCase
 {
     public function testBasic ()
     {

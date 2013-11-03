@@ -2,7 +2,7 @@
 
 use laborra\passiverecords\PassiveRecord;
 
-class PassiveRecordTest extends yii\test\TestCase
+class PassiveRecordTest extends PHPUnit_Framework_TestCase
 {
     public function testFindAllByHash ()
     {
