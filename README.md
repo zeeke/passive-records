@@ -1,7 +1,8 @@
-Passive Records for Yii2 framework extension
+Passive Records for PHP
 ===============
 
 [![Build Status](https://travis-ci.org/zeeke/passive-records.png?branch=master)](https://travis-ci.org/zeeke/passive-records) [![Coverage Status](https://coveralls.io/repos/zeeke/passive-records/badge.png)](https://coveralls.io/r/zeeke/passive-records)
+
 
 This extension aims to provide a way to model read only databases. These
 kind of databases are useful when a software component needs to access
@@ -171,6 +172,5 @@ class RoleFunctionality extends PassiveRecord
 ## Documentation
 
 ### Declaring passive record classes
-
-
+[TBD]
 

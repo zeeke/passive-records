@@ -8,11 +8,8 @@
         "source": "https://github.com/zeeke/passive-records"
     },
     "minimum-stability": "dev",
-    "require": {
-        "yiisoft/yii2": "*"
-    },
     "require-dev": {
-        "phpunit/phpunit": "@dev"
+        "phpunit/phpunit": "3.7.28"
     },
     "autoload": {
         "psr-0": {"laborra\\passiverecords": "src/"}
