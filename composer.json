@@ -1,7 +1,7 @@
 {
-    "name": "zeeke/passive-records",
-    "description": "Passive Records extension for Yii2 framework",
-    "keywords": ["yii", "Passive Records"],
+    "name": "laborra/passive-records",
+    "description": "Passive Records library for PHP",
+    "keywords": ["Passive Records", "Database"],
     "type": "library",
     "license": "BSD-3-Clause",
     "support": {
